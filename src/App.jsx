@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import Card from './Card';
+import "./App.css";
 
-  class App extends Component{
+  
 
-        render(){
-          return(
-             <React.Fragment>
-               <div>
-                 <h1>Hello World</h1>
-               </div>
-             </React.Fragment>
-          )
-        }
-  }
-  export default App;
+function App(){
+  return(
+    <React.Fragment>
+      
+    </React.Fragment>
+  )
+}
+export default App;
+
+       
