@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useCreate = (callback) => {
+const useCreateCollection = (callback) => {
 
     const [values, setValues] = useState({});
 
@@ -17,4 +17,4 @@ const useCreate = (callback) => {
     return {values, handleChange, handleSubmit, setValues}
 }
 
-export default useCreate;
+export default useCreateCollection;
