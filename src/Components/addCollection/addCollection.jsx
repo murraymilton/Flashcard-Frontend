@@ -3,13 +3,13 @@ import useCreate from '../useCreate';
 import axios from 'axios';
 
 
-const CreateCollections = (props) => {
+const CreateCollection = (props) => {
 
     const {values, handleChange, handleSubmit} = useCreate(submitCollection);
     const [view, setView] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
-    const handleHides = () => setView(false);
+    const handleHide = () => setView(false);
     const handleView = () => setView(true);
 
     async function submitCollection(){
