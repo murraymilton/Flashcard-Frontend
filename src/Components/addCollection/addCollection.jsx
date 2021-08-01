@@ -3,13 +3,13 @@ import useCreate from '../useCreate';
 import axios from 'axios';
 
 
-const CreateCollection = (props) => {
+const CreateCollections = (props) => {
 
     const {values, handleChange, handleSubmit} = useCreate(submitCollection);
     const [view, setView] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
-    const handleHide = () => setView(false);
+    const handleHides = () => setView(false);
     const handleView = () => setView(true);
 
     async function submitCollection(){
@@ -17,7 +17,7 @@ const CreateCollection = (props) => {
         try{
             await axios.post(`http://127.0.0.1:8000/cards/collections`, addcollection);
             setSubmitted(true);
-            setTimeout(() => {setView(false); setSubmitted(false)}, 700);
+            setTimeout(() => {setView(false); setSubmitted(false)}, 100);
             props.refresh()
         }
         catch(error){
