@@ -1,23 +1,22 @@
-import React, { useState } from "react";
-import axios from "axios";
-import useCreate from "../useCreate.jsx";
+import React, { useState } from 'react';
+import useForm from '../UseForm/useForm';
+import axios from 'axios';
+import './createCardForm.css';
 
-const AddCard = (props) => {
-  const [card, setCard] = useState({ question, answer, collection });
-  const { values, handleChange, handleSubmit } = useCreate();
+const CreateCardForm = (props) => {
+    const { values, handleChange, handleSubmit } = useForm(createCard);
+    const [card, setCard] = useState(props.cards);
 
-  CreateCard = async (props) => {
-    const CardValues = { ...values, collection: props.collections };
-    try {
-      let res = await axios.post(
-        `http://127.0.0.1:8000/collections/cards/1/new/`,
-        AddCard
-      );
-      setCard(res.data);
-    } catch (error) {
-      console.log(error);
+    async function createCard() {
+        const addCard = {...values, collection: props.collectionIsSelected};
+        try{
+            let response = await axios.post(`http://127.0.0.1:8000/collection/card/${props.collectionIsSelected}/new/`, addCard)
+            setCard(response.data)
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
-  };
 
   return (
     <div>
