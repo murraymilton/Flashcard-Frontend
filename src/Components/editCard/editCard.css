@@ -1,0 +1,11 @@
+.edit-card-form h3 {
+  font-size: large;
+  padding-top: 2px;
+}
+
+.btn btn-outline-primary {
+  border-width: thick;
+  border-color: lightgray;
+  color: lightskyblue;
+  front-weight: 300;
+}
