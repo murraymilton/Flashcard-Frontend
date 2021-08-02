@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios';
 import "./App.css";
+import AddCard from './Components/addCard/addCard';
 
   
 
@@ -11,7 +12,8 @@ function App(){
   const [cards, selectedCards] = useState([]);
 
   useEffect(() => {
-    getAllCollections(); // Will return all  collections within a given set/ will add search filter 
+    getAllCollections();
+    getAllCards(); // Will return all  collections within a given set/ will add search filter 
   }, []);
 
   let getAllCollections = async () => {
@@ -26,7 +28,7 @@ function App(){
   }
   let getAllCards = async (id) => {
     try{
-      let res = await axios.get(`http://127.0.0.1:8000/collections/card/${id}/`);
+      let res = await axios.get(`http://127.0.0.1:8000/collection/card/`);
       console.log(res.data)
       selectedCards(res.data)
     }
@@ -38,6 +40,7 @@ function App(){
     <React.Fragment>
       <div>
         <h1 className="title">Flash My IQ</h1>
+        <AddCard/>
       </div>
     </React.Fragment>
   )

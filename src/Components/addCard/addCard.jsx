@@ -1,32 +1,33 @@
-import React, { useState } from 'react';
-import useForm from '../UseForm/useForm';
-import axios from 'axios';
-import './createCardForm.css';
+import React, { useState } from "react";
+import axios from "axios";
+import useCreate from "../useCreate.jsx";
 
-const CreateCardForm = (props) => {
-    const { values, handleChange, handleSubmit } = useForm(createCard);
-    const [card, setCard] = useState(props.cards);
+const AddCard = (props) => {
+  const [card, setCard] = useState(props.card);
+  const { values, handleChange, handleSubmit } = useCreate(CreateCard);
 
-    async function createCard() {
-        const addCard = {...values, collection: props.collectionIsSelected};
-        try{
-            let response = await axios.post(`http://127.0.0.1:8000/collection/card/${props.collectionIsSelected}/new/`, addCard)
-            setCard(response.data)
-        }
-        catch (err) {
-            console.log(err);
-        }
+  async function CreateCard() {
+    const CardValues = { ...values, collection: props.collection};
+    try {
+      let res = await axios.post(
+        `http://127.0.0.1:8000/collection/card/collection}/new/`,
+        AddCard
+      );
+      setCard(res.data);
+    } catch (error) {
+      console.log(error);
     }
+  }
 
   return (
     <div>
       <form
-        class="form-control form-control-sm"
+        className="form-control form-control-sm"
         onSubmit={handleSubmit}
         className="container"
       >
         <div className="row col-align-left">
-          <div></div>
+          
           <div className="form-group">
             <div className="col-md-4">
               <label>Answer</label>
@@ -34,7 +35,7 @@ const CreateCardForm = (props) => {
                 className="form-control"
                 type="text"
                 name="Answer"
-                value={answer}
+                value={values.answer}
                 onChange={handleChange}
               />
             </div>
@@ -45,7 +46,7 @@ const CreateCardForm = (props) => {
                 className="form-control"
                 type="text"
                 name="Question"
-                value={question}
+                value={values.question}
                 onChange={handleChange}
               />
             </div>
@@ -55,13 +56,15 @@ const CreateCardForm = (props) => {
                 className="form-control"
                 type="text"
                 name="Colletions"
-                value={collections.id}
+                value={values.collections}
                 onChange={handleChange}
               />
             </div>
 
             <div className="col-md-4">
-              <input type="submit" value="Add" />
+              <button type="submit" className="Add Card">
+                Add Card
+              </button>
             </div>
           </div>
         </div>
