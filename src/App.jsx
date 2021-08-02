@@ -12,8 +12,8 @@ function App(){
   const [cards, selectedCards] = useState([]);
 
   useEffect(() => {
-    getAllCollections();
-    getAllCards(); // Will return all  collections within a given set/ will add search filter 
+    getAllCollections(); // Will return all  collections within a given set/ will add search filter
+    getAllCards(); // Will return all  cards within a given set/ will add search filter
   }, []);
 
   let getAllCollections = async () => {

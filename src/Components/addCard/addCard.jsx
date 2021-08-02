@@ -6,13 +6,15 @@ const AddCard = (props) => {
   const [card, setCard] = useState(props.card);
   const { values, handleChange, handleSubmit } = useCreate(CreateCard);
 
-  async function CreateCard() {
-    const CardValues = { ...values, collection: props.collection};
-    try {
+  async function CreateCard(){
+    let CardValues = { ...values};
+    console.log("Card Values: ", CardValues);
+      try {
       let res = await axios.post(
-        `http://127.0.0.1:8000/collection/card/collection}/new/`,
-        AddCard
+        `http://127.0.0.1:8000/collection/card/new/`,
+        CardValues
       );
+      setTimeout(3000)
       setCard(res.data);
     } catch (error) {
       console.log(error);
@@ -27,14 +29,13 @@ const AddCard = (props) => {
         className="container"
       >
         <div className="row col-align-left">
-          
           <div className="form-group">
             <div className="col-md-4">
               <label>Answer</label>
               <input
                 className="form-control"
                 type="text"
-                name="Answer"
+                name="answer"
                 value={values.answer}
                 onChange={handleChange}
               />
@@ -45,7 +46,7 @@ const AddCard = (props) => {
               <input
                 className="form-control"
                 type="text"
-                name="Question"
+                name="question"
                 value={values.question}
                 onChange={handleChange}
               />
@@ -54,9 +55,9 @@ const AddCard = (props) => {
               <label>Colletions:</label>
               <input
                 className="form-control"
-                type="text"
-                name="Colletions"
-                value={values.collections}
+                type="number"
+                name="collection"
+                value={values.collection}
                 onChange={handleChange}
               />
             </div>
