@@ -6,43 +6,71 @@ const AddCard = (props) => {
   const { values, handleChange, handleSubmit } = useCreate(createCard);
   const [card, setCard] = useState(props.cards);
 
-  async function createCard() {
-      const addCard = {...values, collection: props.collectionIsSelected};
-      try{
-          let response = await axios.post(`http://127.0.0.1:8000/collection/card/${props.collectionIsSelected}/new/`, addCard)
-          setCard(response.data)
-      }
-      catch (error) {
-          console.log(error);
-      }
-  } 
+  async function CreateCard(){
+    let CardValues = { ...values};
+    console.log("Card Values: ", CardValues);
+      try {
+      let res = await axios.post(
+        `http://127.0.0.1:8000/collection/card/new/`,
+        CardValues
+      );
+      setTimeout(3000)
+      setCard(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
-    <div className="add-card">
-        <h1>Add Card: </h1>
-        <form onSubmit={handleSubmit}>
-            <label>
-                question:
-                <input
-                    type="text" 
-                    name="term"
-                    onChange={handleChange}
-                    value={values.question || '' }
-                    required={true}
-                />
-            </label>
-            <label>
-                answer: 
-                <input
-                    type="text" 
-                    name="definition"
-                    onChange={handleChange}
-                    value={values.answer || '' }
-                    required={true}
-                />
-            </label>
-            <button className="btn btn-light" type="submit">Submit</button>
-        </form>
+    <div>
+      <form
+        className="form-control form-control-sm"
+        onSubmit={handleSubmit}
+        className="container"
+      >
+        <div className="row col-align-left">
+          <div className="form-group">
+            <div className="col-md-4">
+              <label>Answer</label>
+              <input
+                className="form-control"
+                type="text"
+                name="answer"
+                value={values.answer}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="col-md-4">
+              <label>Question:</label>
+              <input
+                className="form-control"
+                type="text"
+                name="question"
+                value={values.question}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="col-md-4">
+              <label>Colletions:</label>
+              <input
+                className="form-control"
+                type="number"
+                name="collection"
+                value={values.collection}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="col-md-4">
+              <button type="submit" className="Add Card">
+                Add Card
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
     </div>
 )
 }
