@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 
 
-const collectionView = (props) => {
+function CollectionsList(props) {
+
+        let collectionList = props.collections.map(collection => { if(props.collectionIsSelected === collection.id){
+                return <li className="collection-list-item-active"onClick={() => props.getAllCards(collection.id)}
+                key={collection.id}>{collection.title}</li>
+            }
+            else{
+                return <li className="collection-list-item"onClick={() => props.getAllCards(collection.id)}
+                key={collection.id}>{collection.title}</li>
+            }
+        });
      return(
-         <div>
-
+         <div className="collection-List">
+             <h2>Collections</h2>
+              <ul> {collectionList}</ul>
          </div>
      )
 }
-export default collectionView;
+export default CollectionsList;

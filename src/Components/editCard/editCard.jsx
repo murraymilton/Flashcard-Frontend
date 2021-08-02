@@ -20,8 +20,8 @@ const EditCard = (props) => {
     }
     
     return(
-        <div className="modify-card-form">
-            <h3>Make Revisions to Card</h3>
+        <div className="edit-card-form">
+            <h3>Edit Card</h3>
             <form class="row gy-2 gx-3 align-items-center" onSubmit={handleSubmit}>
                 <div>
                     <label class="visually-hidden" for="autoSizingInput">Question
