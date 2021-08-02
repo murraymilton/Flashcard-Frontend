@@ -3,7 +3,7 @@ import axios from "axios";
 import useCreate from "../useCreate.jsx";
 
 const AddCard = (props) => {
-  const { values, handleChange, handleSubmit } = useCreate(createCard);
+  const { values, handleChange, handleSubmit } = useCreate(CreateCard);
   const [card, setCard] = useState(props.cards);
 
   async function CreateCard(){
