@@ -1,7 +1,10 @@
 import React,{useState} from 'react';
+import useCreate from '../useCreate';
 import axios from 'axios';
 
-const AddCard = (props) => {
+const CreateCard = (props) => {
+    const {values, handleChange, handleSubmit} = useCreate()
+
         return(
             <div>
                 
