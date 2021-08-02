@@ -17,11 +17,21 @@ function App(){
   let getAllCollections = async () => {
     try{
       let res = await axios.get('http://127.0.0.1:8000/collections/');
-      alert(res.data)
+      console.log(res.data) // Verified called(functions and gets all collections)
       setCollections(res.data)
     }
     catch(error) {
       alert(error);
+    }
+  }
+  let getAllCards = async (id) => {
+    try{
+      let res = await axios.get(`http://127.0.0.1:8000/collections/card/${id}/`);
+      console.log(res.data)
+      selectedCards(res.data)
+    }
+    catch(error){
+      console.log(error);
     }
   }
   return(
