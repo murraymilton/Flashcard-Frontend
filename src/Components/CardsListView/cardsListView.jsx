@@ -1,17 +1,20 @@
 import React from 'react';
-import './card.css';
+import CardDisplay from '../CardDisplay/cardDisplay';
 
-const Card = (props) => (
-    <div className="card-container">
-        <div className="card">
-            <div className="front">
-                <div className="front back">
+function CardListView(props) {
+    props.cards.map(card => { 
+        return <li key={card.id}>
+            {card.question} - {card.anwser}</li>
+    });
 
-                </div>
-            </div>
-
+    return(
+        <div className="cards-list">
+                <ul>
+                    <CardDisplay cards={props.cards} collections={props.collections}
+                                collectionIsSelected={props.collectionIsSelected}/>
+                </ul>  
         </div>
+    )
+}
 
-    </div>
-)
-export default Card
+export default CardListView;

@@ -1,0 +1,91 @@
+.card-viewer {
+  background-color: lightgray;
+  text-align: center;
+  display: block;
+}
+
+.card-viewer h1 {
+  font-size: xx-large;
+  color: rgb(37, 104, 158);
+}
+
+.card-viewer h2 {
+  font-size: large;
+  color: rgb(37, 104, 158);
+}
+
+.card-viewer h3 {
+  font-size: medium;
+  color: rgb(37, 104, 158);
+}
+
+.btn-outline-primary {
+  border-width: thin;
+  border-color: rgb(37, 104, 158);
+  color: rgb(37, 104, 158);
+  font-weight: 500;
+  margin-top: 20%;
+  margin-left: 40%;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  color: #fff;
+  font-weight: bold;
+  background-color: rgb(37, 104, 158);
+  border-color: rgb(37, 104, 158);
+}
+
+.flashcard {
+  color: rgb(37, 104, 158);
+  border-width: 15px;
+  border-style: ridge;
+  border-color: rgb(203, 241, 253);
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 40vh;
+  margin-bottom: 5%;
+}
+
+.flashcard h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: rgb(37, 104, 158);
+}
+
+.flashcard h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 7%;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: rgb(37, 104, 158);
+}
+
+.flashcard h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-size: 15px;
+  padding-top: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: rgb(37, 104, 158);
+}
+
+.edit-card {
+  text-align: center;
+  width: 25%;
+  height: 18%;
+  color: white;
+  background-color: rgb(37, 104, 158);
+  border-style: groove;
+  border-width: thin;
+  border-radius: 10px;
+  border-color: black;
+  border-radius: 15px;
+  padding-bottom: 15px;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}

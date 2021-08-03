@@ -1,11 +1,20 @@
-.edit-card-form h3 {
-  font-size: large;
-  padding-top: 2px;
+.edit-card-form h1 {
+  font-size: x-large;
+  padding-top: 1%;
 }
 
-.btn btn-outline-primary {
-  border-width: thick;
-  border-color: lightgray;
-  color: lightskyblue;
-  front-weight: 300;
+.btn-light {
+  border-width: thin;
+  border-color: rgb(37, 104, 158);
+  color: rgb(37, 104, 158);
+  font-weight: 500;
+}
+
+.btn-light:hover,
+.btn-light:focus {
+  color: #fff;
+  font-weight: bold;
+  background-color: rgb(37, 104, 158);
+  border-color: black;
+  border-width: thin;
 }

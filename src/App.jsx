@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios';
 import "./App.css";
 import AddCard from './Components/addCard/addCard';
+import CardListView from './Components/CardsListView/cardsListView';
 import CollectionsList from './Components/CollectionsList/collectionsList';
 
   
@@ -41,11 +42,19 @@ function App(){
   }
   return(
     <React.Fragment>
-      <div>
+      <div className="container">
         <h1 className="title">Flash My IQ</h1>
         <CollectionsList collections={collections} cards={cards} getAllCards={getAllCards} collectionIsSelected={collectionIsSelected}/>
-        <AddCard/>
+        <CardListView collections={collections}cards={cards} getAllCollections={getAllCollections} getAllCards={getAllCards} collectionIsSelected={collectionIsSelected}/>
       </div>
+      <div>
+      <AddCard collections={collections} cards={cards} collectionIsSelected={collectionIsSelected}/>
+      </div>
+      <div>
+      {collectionIsSelected == null &&
+        (<h2 className='choose-collection'>Please choose a collection of Flashcards</h2>)  
+      }
+    </div>
     </React.Fragment>
   )
 }
