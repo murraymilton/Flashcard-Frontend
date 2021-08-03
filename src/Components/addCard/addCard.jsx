@@ -56,6 +56,7 @@ const AddCard = (props) => {
               <input
                 className="form-control"
                 type="number"
+                min='1'
                 name="collection"
                 value={values.collection}
                 onChange={handleChange}
