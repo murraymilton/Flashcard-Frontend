@@ -27,8 +27,7 @@ const AddCard = (props) => {
       <form
         className="form-control form-control-sm"
         onSubmit={handleSubmit}
-        className="container"
-      >
+        className="container">
         <div className="row col-align-left">
           <div className="form-group">
             <div className="col-md-4">

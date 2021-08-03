@@ -19,4 +19,4 @@ function CollectionsList(props) {
          </div>
      )
 }
-export default CollectionsList;
+export default CollectionsList;    

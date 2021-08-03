@@ -14,7 +14,7 @@ function CardListView(props) {
                                 collectionIsSelected={props.collectionIsSelected}/>
                 </ul>  
         </div>
-    )
+    )    
 }
 
 export default CardListView;

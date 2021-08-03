@@ -52,7 +52,7 @@ function CardDisplay(props) {
                 <div className='edit-card'>
                     <EditCard cards={props.cards[cardNumber]} collections={props.collections}
                             collectionIsSelected={props.collectionIsSelected}/>
-                </div>
+                </div>     
             </div>
     )}
 }

@@ -9,7 +9,7 @@ import axios from 'axios';
 const EditCard = (props) => {
     const {values, handleChange, handleSubmit, setValues} = useCreate(editCardSubmit);
     const [show, setShow] = useState(false)
-    const [submitted, setSubmitte] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
 
     const [card, setCard] = useState(props.cards); // Will Handle the revisions view to card are user edit. ( useEffect needed?)- verify in subcomp
 
@@ -56,4 +56,4 @@ const EditCard = (props) => {
     </Modal>
     )
 }
-export default EditCard;
+export default EditCard;      
