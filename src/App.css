@@ -14,3 +14,7 @@
 .body {
   background-image: url(./Library1.jpg);
 }
+
+h1 {
+  text-align: center;
+}
