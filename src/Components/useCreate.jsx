@@ -12,7 +12,7 @@ const useCreate = (callback) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         await callback();
-        setValues({})
+        setValues({}, 500)
     }
     return {values, handleChange, handleSubmit, setValues}
 }

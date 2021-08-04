@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios';
 import "./App.css";
-import EditCard from '../editCard/editCard';
+import EditCard from './Components/editCard/editCard';
 import AddCard from './Components/addCard/addCard';
 import CardList from './Components/CardsList/cardsList';
 import CollectionsList from './Components/CollectionsList/collectionsList';
