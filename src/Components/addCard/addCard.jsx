@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './addCard.css';
 import useCreate from "../useCreate.jsx";
 
 const AddCard = (props) => {

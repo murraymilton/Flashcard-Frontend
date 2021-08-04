@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import EditCard from '../editCard/editCard';
-import './cardDisplay.css';
 
 
 function CardDisplay(props) {

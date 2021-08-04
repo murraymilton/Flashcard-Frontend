@@ -1,13 +1,13 @@
 .flashcards-header {
   text-align: center;
   font-style: italic;
-  color: rgb(37, 104, 158);
+  color: purple;
   background-color: lightgray;
 }
 
 .choose-collection {
   text-align: center;
-  color: rgb(37, 104, 158);
+  color: purple;
   font-size: x-large;
 }
 
