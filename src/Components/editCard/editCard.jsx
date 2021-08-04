@@ -39,7 +39,7 @@ const EditCard = (props) => {
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Group controlId="word">
+                    <Form.Group controlId="question">
                         <Form.Label>Question</Form.Label>
                         <Form.Control type="text" name='question'onChange={handleChange} value={values.question} required={true}/>
                     </Form.Group>
@@ -56,9 +56,9 @@ const EditCard = (props) => {
                     <div className='row'>
                         <div className='col-md-8 col-0'></div>
                         <Button variant="secondary" className='mr-2' onClick={handleClose}>
-                            Close
+                            Exit
                         </Button>
-                        {submitted ? <h4 className='text-center'>Done!</h4> : <Button type='submit' variant="primary">Submit</Button>}  
+                        {submitted ? <h4 className='text-center'>Your revisions where posted</h4> : <Button type='submit' variant="primary">Submit</Button>}  
                         
                     </div>
                 </Form>
