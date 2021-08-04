@@ -7,7 +7,7 @@ function CardsList(props) {
 
   props.cards.map(card => { 
       return <li key={card.id}>
-          {card.term} - {card.definition}</li>
+          {card.question} - {card.answer}</li>
   });
 
   return(
