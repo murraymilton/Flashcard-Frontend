@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './collectionsList.css';
 
 function CollectionsList(props) {
 

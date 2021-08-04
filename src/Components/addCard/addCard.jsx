@@ -40,7 +40,7 @@ const AddCard = (props) => {
                 onChange={handleChange}
               />
             </div>
-
+      
             <div className="col-md-4">
               <label>Question:</label>
               <input

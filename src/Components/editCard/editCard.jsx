@@ -3,7 +3,6 @@ import useCreate from '../useCreate';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form'
-import './editCard.css';
 import axios from 'axios';
 
 const EditCard = (props) => {
@@ -29,31 +28,43 @@ const EditCard = (props) => {
     }
     
     return(
-        <Modal>
+        <>
+        <Button size='sm' variant="outline-warning" onClick={handleShow}>
+            Edit
+        </Button>
+
+        <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Edit Cards</Modal.Title>
+            <Modal.Title>Edit Flashcard</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-        <div className="edit-card-form">
-            <h3>Edit Card</h3>
-            <form onSubmit={handleSubmit}>
-                <Form.Group controlId="question">
-                    <Form.Label>Question</Form.Label>
-                    <Form.Control type="text" class="form-control" id="autoSizinInput" placeholder={props.cards.question}
-                    onChange={handleChange} value={values.questions} required={true}/>
-                </Form.Group>
-                <Form.Group controlId="answer">
-                    <Form.Label>Answer</Form.Label>
-                    <Form.Control type="text" placeholder={props.cards.answer} onChange={handleChange}value={values.answer} required={true} />
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group controlId="word">
+                        <Form.Label>Question</Form.Label>
+                        <Form.Control type="text" name='question'onChange={handleChange} value={values.question} required={true}/>
                     </Form.Group>
-                <div className="row">
-                    <div className="col-md-8 col-0"></div>
-                    <button type="submit" class="btn btn-outline-primary">Submit</button>   
-                </div>
-            </form>
-        </div>
-        </Modal.Body>
-    </Modal>
+                    <Form.Group controlId="answer">
+                        <Form.Label>Answer</Form.Label>
+                        <Form.Control type="text" name='answer' onChange={handleChange} value={values.answer} required={true}/>
+                    </Form.Group>
+                    <Form.Group controlId="answer">
+                        <Form.Label>Collection</Form.Label>
+                        <Form.Control as="select" name='collection' onChange={handleChange} value={values.currentCollection} required={true}>
+                            {/* {generateCollectionOptions(props.currentCollection)} */}
+                        </Form.Control>
+                    </Form.Group>
+                    <div className='row'>
+                        <div className='col-md-8 col-0'></div>
+                        <Button variant="secondary" className='mr-2' onClick={handleClose}>
+                            Close
+                        </Button>
+                        {submitted ? <h4 className='text-center'>Done!</h4> : <Button type='submit' variant="primary">Submit</Button>}  
+                        
+                    </div>
+                </Form>
+            </Modal.Body>
+        </Modal>
+    </>
     )
 }
 export default EditCard;      

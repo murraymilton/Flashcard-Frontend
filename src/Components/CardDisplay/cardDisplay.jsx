@@ -49,11 +49,11 @@ function CardDisplay(props) {
                     <button type="button" data-mdb-target="#carouselBasicExample"data-mdb-slide-to="2"aria-label="Slide 3"   
                     className="btn btn-info" onClick={() => showNextCard()}>Next Card</button>
                 </div>
-                <div className='edit-card'>
-                    <EditCard cards={props.cards[cardNumber]} collections={props.collections}
-                            collectionIsSelected={props.collectionIsSelected}/>
-                </div>     
-            </div>
+            <div className='edit-card'>
+            <EditCard cards={props.cards[cardNumber]} collections={props.collections}
+                    collectionIsSelected={props.collectionIsSelected}/>
+        </div> 
+        </div>    
     )}
 }
 
